@@ -1,8 +1,0 @@
-[MESSAGES CONTROL]
-disable=
-	redefined-argument-from-local,
-	too-many-arguments,
-	too-few-public-methods,
-	duplicate-code,
-	too-many-locals,
-	too-many-branches,
