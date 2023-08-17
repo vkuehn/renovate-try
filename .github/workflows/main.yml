@@ -1,3 +1,6 @@
+---
+# This workflow will just do hopefully nothingg and is just a dummy
+
 name: Greeting on variable day
 
 on:
