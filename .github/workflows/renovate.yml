@@ -1,0 +1,29 @@
+---
+# This workflow will do renovate bot work
+
+name: RenovateBot
+
+on:
+  workflow_dispatch
+
+env:
+  # Setting an environment variable with the value of a configuration variable
+  env_var: ${{ vars.ENV_CONTEXT_VAR }}
+
+jobs:
+  display-variables:
+    name: ${{ vars.JOB_NAME }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: runs renovate
+      run: |
+        docker run \
+            --rm \
+            -e LOG_LEVEL="debug" \
+            -e GITHUB_COM_TOKEN="$GITHUB_COM_TOKEN" \
+            -v "/path/to/local/config.js:/usr/src/app/config.js" \
+            renovate/renovate:"32.6.12" \
+            --token "$RENOVATE_TOKEN" \
+            --dry-run="true"
