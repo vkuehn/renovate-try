@@ -5,5 +5,5 @@ module.exports = {
     "extends": ["config:recommended", ":skipStatusChecks"],
     "gitLabIgnoreApprovals": false,
     "platformAutomerge": false,
-    "platform": "local"
+    "platform": "github"
   }
