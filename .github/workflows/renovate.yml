@@ -17,10 +17,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Show files
-      run: cat ./config.js
     - name: runs renovate
-      if: ${{ false }}
+      #if: ${{ false }}
       run: |
         docker run \
             --rm \
