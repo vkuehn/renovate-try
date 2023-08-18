@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Show files
-      run: cat ../config.js
+      run: cat ./config.js
     - name: runs renovate
       if: ${{ false }}
       run: |
@@ -26,7 +26,7 @@ jobs:
             --rm \
             -e LOG_LEVEL="debug" \
             -e GITHUB_COM_TOKEN=${{ secrets.FOR_RENOVATE_ACCESS }} \
-            -v "../config.js:/usr/src/app/config.js" \
+            -v "./config.js:/usr/src/app/config.js" \
             renovate/renovate:"32.6.12" \
             --dry-run="true"
     
