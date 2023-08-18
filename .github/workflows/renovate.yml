@@ -22,7 +22,7 @@ jobs:
         docker run \
             --rm \
             -e LOG_LEVEL="debug" \
-            -e GITHUB_COM_TOKEN="$FOR_RENOVATE_ACCESS" \
+            -e GITHUB_COM_TOKEN=${{ secrets.FOR_RENOVATE_ACCESS }} \
             -v "/path/to/local/config.js:/usr/src/app/config.js" \
             renovate/renovate:"32.6.12" \
             --dry-run="true"
