@@ -25,5 +25,4 @@ jobs:
             -e GITHUB_COM_TOKEN="$FOR_RENOVATE_ACCESS" \
             -v "/path/to/local/config.js:/usr/src/app/config.js" \
             renovate/renovate:"32.6.12" \
-            --token "$RENOVATE_TOKEN" \
             --dry-run="true"
