@@ -18,13 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: runs renovate
-      # if: ${{ false }}
-      run: |
-        docker run \
-            --rm \
-            -e LOG_LEVEL="debug" \
-            -e GITHUB_COM_TOKEN=${{ secrets.FOR_RENOVATE_ACCESS }} \
-            -v "./config.js:/usr/src/app/config.js" \
-            renovate/renovate:"32.6.12" \
-            --dry-run="true"
-    
+      uses: renovatebot/github-action@v39.0.1
+      with:
+          renovate-version: full
+          token: ${{ secrets.RENOVATE_TOKEN }}
