@@ -4,6 +4,8 @@ module.exports = {
     "dryRun" : "true",
     "extends": ["config:recommended", ":skipStatusChecks"],
     "gitLabIgnoreApprovals": false,
+    "onboarding": false,
     "platformAutomerge": false,
-    "platform": "github"
+    "platform": "github",  
+    "requireConfig": false
   }
