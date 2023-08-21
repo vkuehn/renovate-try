@@ -11,14 +11,16 @@ env:
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 jobs:
-  display-variables:
+  renovate:
     name: ${{ vars.JOB_NAME }}
     runs-on: ubuntu-latest
 
     steps:
+    - name: Show secret
+      run: echo ${{ secrets.FOR_RENOVATE_ACCESS }}
     - uses: actions/checkout@v3
     - name: runs renovate
-      #if: ${{ false }}
+      if: ${{ false }}
       run: |
         docker run \
             --rm \
