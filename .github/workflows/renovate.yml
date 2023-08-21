@@ -16,11 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Show secret
-      run: echo ${{ secrets.FOR_RENOVATE_ACCESS }}
     - uses: actions/checkout@v3
     - name: runs renovate
-      if: ${{ false }}
+      # if: ${{ false }}
       run: |
         docker run \
             --rm \
