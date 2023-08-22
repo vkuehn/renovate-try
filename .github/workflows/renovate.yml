@@ -14,13 +14,13 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
-      - name: echo Token
-        run: echo "${{ secrets.RENOVATE_TOKEN }}"
+      - name: Show Repo
+        env:
+          GH_REPO: ${{ github.repository }}
+        run: echo "run on $GH_REPO"
       - name: Checkout
         uses: actions/checkout@v3.5.3
-        if: ${{ true }}
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v39.0.1
-        if: ${{ true }}
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
