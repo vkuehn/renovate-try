@@ -1,6 +1,7 @@
 module.exports = {
     "automerge": false,
-    "autodiscover": true,
+    "autodiscover": false,
+    "autodiscoverFilter": ["renovate-try/*"],
     "docker-compose": {"enabled": true},
     "dryRun" : "true",
     "extends": ["config:recommended", ":skipStatusChecks"],
