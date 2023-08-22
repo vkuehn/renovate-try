@@ -14,11 +14,13 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
-      - name: echo Toke
+      - name: echo Token
         run: echo "${{ secrets.RENOVATE_TOKEN }}"
       - name: Checkout
         uses: actions/checkout@v3.5.3
+        if: ${{ true }}
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v39.0.1
+        if: ${{ true }}
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
