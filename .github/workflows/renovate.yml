@@ -15,14 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show Repo
-        env:
-          GH_REPO: ${{ github.repository }}
-        run: echo "run on $GH_REPO"
+        run: echo "run on ${{ github.repository }}"
       - name: Checkout
         uses: actions/checkout@v3.5.3
       - name: Self-hosted Renovate
-        env:
-          REPO_TOKEN: ${{ secrets.RENOVATE_TOKEN  }}
         uses: renovatebot/github-action@v39.0.1
         with:
-          token: "$REPO_TOKEN"
+          token: ${{ secrets.RENOVATE_TOKEN }}
