@@ -11,6 +11,7 @@ env:
   env_var: ${{ vars.ENV_CONTEXT_VAR }}
   RENOVATE_AUTODISCOVER: true
   RENOVATE_AUTODISCOVER_FILTER: "renovate-try/*"
+  RENOVATE_CONFIG_FILE : "config.js"
 
 jobs:
   renovate:
